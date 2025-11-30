@@ -41,7 +41,7 @@ export class UserService {
     };
   }
 
-  async updateUser(id: string, payload: UserDto) {
+  async updateUser(id: string, payload: Partial<UserDto>) {
     const result = await this.userModel.findByIdAndUpdate(id, payload, {
       new: true,
     });

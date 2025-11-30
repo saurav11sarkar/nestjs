@@ -30,7 +30,7 @@ export class UserController {
   }
 
   @Put(':id')
-  async updateUser(@Param('id') id: string, @Body() payload: UserDto) {
+  async updateUser(@Param('id') id: string, @Body() payload: Partial<UserDto>) {
     return this.userService.updateUser(id, payload);
   }
 
